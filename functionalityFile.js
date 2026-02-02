@@ -1,7 +1,12 @@
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed.");
+  }
+  return a / b;
+}
+
 try {
-  let a = b; // ReferenceError
+  console.log(divide(5, 0));
 } catch (error) {
-  console.log(error.name);    // ReferenceError
-  console.log(error.message); // b is not defined
-  console.log(error.stack);   // Stack trace
+  console.error(error.message); // Division by zero is not allowed.
 }
